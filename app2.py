@@ -60,30 +60,11 @@ def train(data):
     data["ChestnutCreek_ft"] = predictions
     return data
 
-#style = "<style>h2 {text-align: center;}</style>"
-#st.markdown(style, unsafe_allow_html=True) 
 logo_path = "logo_svg.svg"
-#st.columns(3)[1].image(logo_path, width=300)
-#st.image(logo_path, width=300)
-# Read the SVG file
-with open(logo_path, "r") as svg_file:
-    svg_content = svg_file.read()
 
-# Encode the SVG content to base64
-encoded_svg = base64.b64encode(svg_content.encode()).decode()
-
-# Embed the SVG in HTML and display it
 col1, col2, col3 = st.columns([1, 2, 1])
-
 with col2:
-    st.markdown(
-        f"""
-        <div style="text-align: center;">
-            <img src="data:image/svg+xml;base64,{encoded_svg}" alt="logo" width="350">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image(logo_path, width=300, use_container_width= True)
 st.markdown('<div style="text-align: center; font-size: 15px;">River Level Prediction App</div>', unsafe_allow_html=True)
 
 st.write("")
