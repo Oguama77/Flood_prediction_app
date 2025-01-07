@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import xgboost as xgb
 import joblib
+import base64
 
 # Load the trained model
 baseline_model = joblib.load('flood_model.joblib')  
@@ -63,7 +64,15 @@ style = "<style>h2 {text-align: center;}</style>"
 st.markdown(style, unsafe_allow_html=True) 
 logo_path = "logo_svg.svg"
 #st.columns(3)[1].image(logo_path, width=300)
-st.image(logo_path, width=300)
+#st.image(logo_path, width=300)
+st.markdown(
+    f"""
+    <div style="text-align: center;">
+        <img src="data:image/png;base64,{base64.b64encode(open(logo_path, "rb").read()).decode()}" alt="logo" width="150">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown('<div style="text-align: center; font-size: 24px;">River Level Prediction App</div>', unsafe_allow_html=True)
 
 st.write("")
