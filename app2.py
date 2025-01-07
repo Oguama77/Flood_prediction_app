@@ -63,9 +63,10 @@ def train(data):
 logo_path = "logo_svg.svg"
 
 col1, col2, col3 = st.columns([1, 2, 1])
+st.markdown('<div style="text-align: center; font-size: 30px;">River Level Prediction App</div>', unsafe_allow_html=True)
 with col2:
     st.image(logo_path, width=300, use_container_width= True)
-st.markdown('<div style="text-align: center; font-size: 15px;">River Level Prediction App</div>', unsafe_allow_html=True)
+
 
 st.write("")
 st.write("")
