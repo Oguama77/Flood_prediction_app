@@ -60,8 +60,8 @@ def train(data):
     data["ChestnutCreek_ft"] = predictions
     return data
 
-style = "<style>h2 {text-align: center;}</style>"
-st.markdown(style, unsafe_allow_html=True) 
+#style = "<style>h2 {text-align: center;}</style>"
+#st.markdown(style, unsafe_allow_html=True) 
 logo_path = "logo_svg.svg"
 #st.columns(3)[1].image(logo_path, width=300)
 #st.image(logo_path, width=300)
@@ -82,7 +82,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown('<div style="text-align: center; font-size: 15px;">   River Level Prediction App</div>', unsafe_allow_html=True)
-
+st.columns(3)[1].image(logo_path, width=300)
 st.write("")
 st.write("")
 st.write("")
