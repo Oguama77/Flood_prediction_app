@@ -90,13 +90,13 @@ if uploaded_file:
 st.subheader("Manual Input", divider="gray")
 with st.form("manual_input"):
     date_time = st.text_input("DateTime (YYYY-MM-DD HH:MM:SS)")
-    rain_in = st.number_input("Rain_in", min_value=0.0000)
+    rain_in = st.number_input("Rain_in", min_value=0.00, format="%.4f")
     season = st.selectbox("Season", ["Dormant Season", "Growing Season"])
-    antecedent_rain_in = st.number_input("AntecedentRain_in", min_value=0.0000)
+    antecedent_rain_in = st.number_input("AntecedentRain_in", min_value=0.00, format="%.4f")
     antecedent_rain_condition = st.selectbox("AntecedentRainCondition", ["AMC I (Dry)", "AMC II (Average)", "AMC III (Wet)"])
-    rain_intensity_in_hr = st.number_input("RainIntensity_in_hr", min_value=0.0000)
-    peak_runoff = st.number_input("PeakRunoff", min_value=0.0000)
-    time_to_peak = st.number_input("TimeToPeak", min_value=0.0000)
+    rain_intensity_in_hr = st.number_input("RainIntensity_in_hr", min_value=0.00, format="%.4f")
+    peak_runoff = st.number_input("PeakRunoff", min_value=0.00, format="%.4f")
+    time_to_peak = st.number_input("TimeToPeak", min_value=0.00, format="%.4f")
     month = pd.to_datetime(date_time).month if date_time else 1
     
     submit_button = st.form_submit_button("Submit")
