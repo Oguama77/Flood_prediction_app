@@ -62,7 +62,8 @@ def train(data):
 style = "<style>h2 {text-align: center;}</style>"
 st.markdown(style, unsafe_allow_html=True) 
 logo_path = "logo_svg.svg"
-st.columns(3)[1].image(logo_path, width=300)
+#st.columns(3)[1].image(logo_path, width=300)
+st.image(logo_path, width=500, use_column_width='always')
 st.markdown('<div style="text-align: center;">River Level Prediction App</div>', unsafe_allow_html=True)
 st.write("")
 st.write("")
