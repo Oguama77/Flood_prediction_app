@@ -73,16 +73,19 @@ with open(logo_path, "r") as svg_file:
 encoded_svg = base64.b64encode(svg_content.encode()).decode()
 
 # Embed the SVG in HTML and display it
-st.markdown(
-    f"""
-    <div style="text-align: center;">
-        <img src="data:image/svg+xml;base64,{encoded_svg}" alt="logo" width="350">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown('<div style="text-align: center; font-size: 15px;">   River Level Prediction App</div>', unsafe_allow_html=True)
-st.columns(3)[1].image(logo_path, width=300)
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+    st.markdown(
+        f"""
+        <div style="text-align: center;">
+            <img src="data:image/svg+xml;base64,{encoded_svg}" alt="logo" width="150">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+st.markdown('<div style="text-align: center; font-size: 15px;">River Level Prediction App</div>', unsafe_allow_html=True)
+
 st.write("")
 st.write("")
 st.write("")
