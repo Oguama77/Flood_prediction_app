@@ -62,16 +62,16 @@ def train(data):
 style = "<style>h2 {text-align: center;}</style>"
 st.markdown(style, unsafe_allow_html=True) 
 logo_path = "logo_svg.svg"
-st.columns(3)[1].image(logo_path, width=700)
-#st.columns(3)[1].write("River Level Prediction App")
+st.columns(3)[1].image(logo_path, width=900)
 st.markdown('<div style="text-align: center;">River Level Prediction App</div>', unsafe_allow_html=True)
 st.write("")
 st.write("")
 st.write("")
 st.write("")
 st.write("")
+st.write("---") 
 # Option 1: Upload a CSV file
-st.subheader("Upload a CSV File")
+st.subheader("Upload a CSV File", divider="blue")
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
 if uploaded_file:
@@ -85,7 +85,7 @@ if uploaded_file:
     st.download_button("Download Predictions", csv, "predictions.csv", "text/csv")
 
 # Option 2: Manual Input
-st.subheader("Manual Input")
+st.subheader("Manual Input", divider="gray")
 with st.form("manual_input"):
     date_time = st.text_input("DateTime (YYYY-MM-DD HH:MM:SS)")
     rain_in = st.number_input("Rain_in", min_value=0.0)
