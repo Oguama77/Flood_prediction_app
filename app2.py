@@ -65,10 +65,18 @@ st.markdown(style, unsafe_allow_html=True)
 logo_path = "logo_svg.svg"
 #st.columns(3)[1].image(logo_path, width=300)
 #st.image(logo_path, width=300)
+# Read the SVG file
+with open(logo_path, "r") as svg_file:
+    svg_content = svg_file.read()
+
+# Encode the SVG content to base64
+encoded_svg = base64.b64encode(svg_content.encode()).decode()
+
+# Embed the SVG in HTML and display it
 st.markdown(
     f"""
     <div style="text-align: center;">
-        <img src="data:image/png;base64,{base64.b64encode(open(logo_path, "rb").read()).decode()}" alt="logo" width="150">
+        <img src="data:image/svg+xml;base64,{encoded_svg}" alt="logo" width="150">
     </div>
     """,
     unsafe_allow_html=True
