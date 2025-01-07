@@ -76,12 +76,12 @@ encoded_svg = base64.b64encode(svg_content.encode()).decode()
 st.markdown(
     f"""
     <div style="text-align: center;">
-        <img src="data:image/svg+xml;base64,{encoded_svg}" alt="logo" width="150">
+        <img src="data:image/svg+xml;base64,{encoded_svg}" alt="logo" width="300">
     </div>
     """,
     unsafe_allow_html=True
 )
-st.markdown('<div style="text-align: center; font-size: 50px;">River Level Prediction App</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; font-size: 20px;">River Level Prediction App</div>', unsafe_allow_html=True)
 
 st.write("")
 st.write("")
