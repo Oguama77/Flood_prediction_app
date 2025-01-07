@@ -81,7 +81,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown('<div style="text-align: center; font-size: 15px;">River Level Prediction App</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; font-size: 15px;">   River Level Prediction App</div>', unsafe_allow_html=True)
 
 st.write("")
 st.write("")
