@@ -63,7 +63,7 @@ style = "<style>h2 {text-align: center;}</style>"
 st.markdown(style, unsafe_allow_html=True) 
 #st.title("Merak Labs")
 logo_path = "logo_svg.svg"
-st.columns(3)[1].image(logo_path, width=500)
+st.columns(3)[1].image(logo_path, width=700)
 st.columns(3)[1].write("River Level Prediction Application")
 st.write("")
 st.write("")
