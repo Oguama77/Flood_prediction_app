@@ -60,8 +60,31 @@ def train(data):
     data["ChestnutCreek_ft"] = predictions
     return data
 
-logo_path = "logo_svg.svg"
+import base64
 
+@st.cache(allow_output_mutation=True)
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def set_png_as_page_bg(jpg_file):
+    bin_str = get_base64_of_bin_file(jpg_file)
+    page_bg_img = '''
+    <style>
+    body {
+    background-image: url("data:image/jpg;base64,%s");
+    background-size: cover;
+    }
+    </style>
+    ''' % bin_str
+    
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    return
+
+set_png_as_page_bg("background_image.png")
+
+logo_path = "logo_svg.svg"
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
