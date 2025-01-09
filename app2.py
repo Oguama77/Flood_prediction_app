@@ -70,7 +70,7 @@ img = get_base64_of_bin_file("background_image.jpg")
 
 page_bg_img = '''
 <style>
-[data-testid="stAppViewContainer"] {{
+[data-testid="streamlitAppContainer"] {{
 background-image: url("data:image/jpeg;base64,%s");
 background-size: cover;
 background-repeat: no-repeat;
