@@ -66,11 +66,11 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-img = get_base64_of_bin_file("background_image.jpg")
+img = get_base64_of_bin_file("background.jpg")
 
 page_bg_img = '''
 <style>
-[data-testid="streamlitAppContainer"] {{
+[data-testid="stAppViewContainer"] {{
 background-image: url("data:image/jpeg;base64,%s");
 background-size: cover;
 background-repeat: no-repeat;
