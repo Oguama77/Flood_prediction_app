@@ -70,12 +70,12 @@ img = get_base64_of_bin_file("background.jpg")
 
 page_bg_img = '''
 <style>
-[data-testid="stAppViewContainer"] {{
+.stApp {
 background-image: url("data:image/jpeg;base64,%s");
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
-}}
+}
 </style>
 ''' 
 
