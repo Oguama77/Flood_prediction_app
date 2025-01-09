@@ -73,7 +73,6 @@ def set_png_as_page_bg(png_file):
     .stApp {
     background-image: url("data:image/jpeg;base64,%s");
     background-size: cover;
-    opacity: .2
     }
     </style>
     ''' % bin_str
@@ -81,7 +80,7 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg("bg_image.png")
+set_png_as_page_bg("background_image.png")
 
 logo_path = "logo_svg.svg"
 
