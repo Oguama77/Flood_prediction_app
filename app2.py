@@ -62,7 +62,7 @@ def train(data):
 
 import base64
 
-@st.cache_resource(allow_output_mutation=True)
+@st.cache_data
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -73,7 +73,7 @@ def set_png_as_page_bg(jpg_file):
     page_bg_img = '''
     <style>
     body {
-    background-image: url("data:image/jpg;base64,%s");
+    background-image: url("data:image/jpeg;base64,%s");
     background-size: cover;
     }
     </style>
