@@ -66,25 +66,20 @@ def get_base64_of_bin_file(bin_file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-def set_png_as_page_bg(jpg_file):
-    bin_str = get_base64_of_bin_file(jpg_file)
-    page_bg_img = '''
-    <style>
-    body {
-    background-image: url("data:image/jpeg;base64,%s");
-    background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
-    }
-    </style>
-    ''' % bin_str
-    
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
+img = get_base64_of_bin_file("background_image.jpg"):
 
-set_png_as_page_bg("background_image.jpg")
+page_bg_img = '''
+<style>
+[data-testid="stAppViewContainer"] {{
+background-image: url("data:image/jpeg;base64,%s");
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}}
+</style>
+''' 
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 logo_path = "logo_svg.svg"
 
