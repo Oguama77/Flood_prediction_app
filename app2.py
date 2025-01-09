@@ -60,28 +60,6 @@ def train(data):
     data["ChestnutCreek_ft"] = predictions
     return data
 
-@st.cache_data
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:image/jpeg;base64,%s");
-    background-size: cover;
-    }
-    </style>
-    ''' % bin_str
-    
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
-
-set_png_as_page_bg("background_image.png")
-
 logo_path = "logo_svg.svg"
 
 col1, col2, col3 = st.columns([1, 2, 1])
@@ -112,9 +90,9 @@ st.subheader("Manual Input", divider="gray")
 with st.form("manual_input"):
     date_time = st.text_input("DateTime (YYYY-MM-DD HH:MM:SS)")
     rain_in = st.number_input("Rain_in", min_value=0.00, format="%.4f")
-    season = st.selectbox("Season", ["Dormant Season", "Growing Season"])
+    season = st.selectbox("Season", ["Dormant Season (1)", "Growing Season (0)"])
     antecedent_rain_in = st.number_input("AntecedentRain_in", min_value=0.00, format="%.4f")
-    antecedent_rain_condition = st.selectbox("AntecedentRainCondition", ["AMC I (Dry)", "AMC II (Average)", "AMC III (Wet)"])
+    antecedent_rain_condition = st.selectbox("AntecedentRainCondition", ["AMC I- Dry(0)", "AMC II- Average(1)", "AMC III- Wet(2)"])
     rain_intensity_in_hr = st.number_input("RainIntensity_in_hr", min_value=0.00, format="%.4f")
     peak_runoff = st.number_input("PeakRunoff", min_value=0.00, format="%.4f")
     time_to_peak = st.number_input("TimeToPeak", min_value=0.00, format="%.4f")
