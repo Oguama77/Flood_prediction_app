@@ -82,7 +82,7 @@ def set_png_as_page_bg(jpg_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg("background_image.png")
+set_png_as_page_bg("background_image.jpg")
 
 logo_path = "logo_svg.svg"
 
