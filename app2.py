@@ -70,17 +70,17 @@ def set_png_as_page_bg(png_file):
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = '''
     <style>
-    [data-testid="stAppViewContainer"] {{
+    .stApp {
     background-image: url("data:image/jpeg;base64,%s");
     background-size: cover;
-    }}
+    }
     </style>
     ''' % bin_str
     
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg("new_background.png")
+set_png_as_page_bg("bg_image.png")
 
 logo_path = "logo_svg.svg"
 
