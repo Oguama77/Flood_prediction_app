@@ -73,6 +73,7 @@ def set_png_as_page_bg(png_file):
     .stApp {
     background-image: url("data:image/jpeg;base64,%s");
     background-size: cover;
+    background-color: rgba(0,0,0,0)
     }
     </style>
     ''' % bin_str
