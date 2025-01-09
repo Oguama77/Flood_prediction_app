@@ -60,8 +60,6 @@ def train(data):
     data["ChestnutCreek_ft"] = predictions
     return data
 
-import base64
-
 @st.cache_data
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
@@ -75,6 +73,10 @@ def set_png_as_page_bg(jpg_file):
     body {
     background-image: url("data:image/jpeg;base64,%s");
     background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
     }
     </style>
     ''' % bin_str
